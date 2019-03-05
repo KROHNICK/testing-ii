@@ -56,7 +56,7 @@ class Dashboard extends Component {
       <>
         <Display strike={this.state.strike} ball={this.state.ball} />
         <div className="dashboard">
-          <h1>Dashboard</h1>
+          <h2>Dashboard</h2>
           <div className="strike">
             <Button
               data-testid="strike-btn"

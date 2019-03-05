@@ -3,8 +3,8 @@ import React from "react";
 const Display = props => {
   return (
     <div className="display">
-      <h1>{props.strike} Strikes</h1>
-      <h1>{props.ball} Balls</h1>
+      <h3>{props.strike} Strikes</h3>
+      <h3>{props.ball} Balls</h3>
     </div>
   );
 };
