@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Display from "./Display";
 
 class Dashboard extends Component {
   state = {
@@ -50,6 +51,11 @@ class Dashboard extends Component {
   render() {
     return (
       <>
+        <Display
+          strike={this.state.strike}
+          ball={this.state.ball}
+          foul={this.state.foul}
+        />
         <div className="dashboard">
           <h1>Dashboard</h1>
           <div className="strike">
