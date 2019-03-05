@@ -1,9 +1,8 @@
 import React from "react";
-import { render, fireEvent } from "react-testing-library";
+import { render } from "react-testing-library";
 import "jest-dom/extend-expect";
 
 import Display from "../components/Display";
-import Dashboard from "../components/Dashboard";
 
 describe("<Display /> tests", () => {
   it("should display strikes and balls", () => {

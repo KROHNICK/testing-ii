@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Display from "./Display";
+import { Button } from "reactstrap";
 
 class Dashboard extends Component {
   state = {
@@ -57,28 +58,28 @@ class Dashboard extends Component {
         <div className="dashboard">
           <h1>Dashboard</h1>
           <div className="strike">
-            <button
+            <Button
               data-testid="strike-btn"
               className="btn"
               onClick={this.strike}
             >
               Strike
-            </button>
+            </Button>
           </div>
           <div className="ball">
-            <button data-testid="ball-btn" className="btn" onClick={this.ball}>
+            <Button data-testid="ball-btn" className="btn" onClick={this.ball}>
               Ball
-            </button>
+            </Button>
           </div>
           <div className="foul">
-            <button data-testid="foul-btn" className="btn" onClick={this.foul}>
+            <Button data-testid="foul-btn" className="btn" onClick={this.foul}>
               Foul
-            </button>
+            </Button>
           </div>
           <div className="hit">
-            <button data-testid="hit-btn" className="btn" onClick={this.hit}>
+            <Button data-testid="hit-btn" className="btn" onClick={this.hit}>
               Hit
-            </button>
+            </Button>
           </div>
         </div>
       </>
