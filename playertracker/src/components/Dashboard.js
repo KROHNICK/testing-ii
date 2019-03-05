@@ -3,54 +3,79 @@ import React, { Component } from "react";
 class Dashboard extends Component {
   state = {
     strike: 0,
-    ball: 0,
-    foul: 0,
-    hit: 0
+    ball: 0
   };
 
   strike = () => {
-    this.setState({
-      strike: this.state.strike + 1
-    });
+    if (this.state.strike <= 2) {
+      this.setState({
+        strike: this.state.strike + 1
+      });
+    } else if (this.state.strike === 3) {
+      this.setState({
+        strike: 0,
+        balls: 0
+      });
+    }
   };
 
   ball = () => {
-    this.setState({
-      ball: this.state.ball + 1
-    });
+    if (this.state.strike <= 3) {
+      this.setState({
+        ball: this.state.ball + 1
+      });
+    } else if (this.state.strike === 4) {
+      this.setState({
+        strike: 0,
+        ball: 0
+      });
+    }
   };
 
   foul = () => {
-    this.setState({
-      foul: this.state.foul + 1
-    });
+    if (this.state.strike < 2) {
+      this.setState({
+        strikes: this.state.strikes + 1
+      });
+    }
   };
 
   hit = () => {
     this.setState({
-      hit: this.state.hit + 1
+      strike: 0,
+      ball: 0
     });
   };
 
   render() {
     return (
       <>
-        <h1>Dashboard</h1>
-        <div className="strike">
-          <h3>{this.state.strike}</h3>
-          <button onClick={this.strike}>+ Strike</button>
-        </div>
-        <div className="ball">
-          <h3>{this.state.ball}</h3>
-          <button onClick={this.ball}>+ Ball</button>
-        </div>
-        <div className="foul">
-          <h3>{this.state.foul}</h3>
-          <button onClick={this.foul}>+ Foul</button>
-        </div>
-        <div className="hit">
-          <h3>{this.state.hit}</h3>
-          <button onClick={this.hit}>+ Hit</button>
+        <div className="dashboard">
+          <h1>Dashboard</h1>
+          <div className="strike">
+            <button
+              data-testid="strike-btn"
+              className="btn"
+              onClick={this.strike}
+            >
+              Strike
+            </button>
+          </div>
+          <div className="ball">
+            <button data-testid="ball-btn" className="btn" onClick={this.ball}>
+              Ball
+            </button>
+          </div>
+          <div className="foul">
+            <button data-testid="foul-btn" className="btn" onClick={this.foul}>
+              Foul
+            </button>
+          </div>
+          <div className="hit">
+            <button data-testid="hit-btn" className="btn" onClick={this.hit}>
+              Hit
+            </button>
+          </div>
         </div>
       </>
     );
