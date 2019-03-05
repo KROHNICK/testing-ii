@@ -5,7 +5,6 @@ const Display = props => {
     <div className="display">
       <h1>{props.strike} Strikes</h1>
       <h1>{props.ball} Balls</h1>
-      <h1>{props.foul} Fouls</h1>
     </div>
   );
 };
